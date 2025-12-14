@@ -294,7 +294,6 @@ def remove_from_cart(request, cart_id):
     cart_item.delete()
     return redirect('cart')
 
-
 def all_products(request):
     # Get search query from GET parameters
     search_query = request.GET.get('search', '')

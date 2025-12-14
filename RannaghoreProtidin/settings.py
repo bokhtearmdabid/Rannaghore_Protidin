@@ -132,3 +132,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 LOGIN_URL = '/sing_in/'
 
+# E-mail Settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'your_email@gmail.com'
+EMAIL_HOST_PASSWORD = 'hegr fsmh bhad jgkb'
+GMAIL_API_CLIENT_ID = '81677612108-0dsbp41gk8jhft99nsgrsvubbcc994dl.apps.googleusercontent.com'
+GMAIL_API_CLIENT_SECRET = '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'
