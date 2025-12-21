@@ -83,8 +83,21 @@ def sing_up(request):
                     mobile_no=int(mobile_no),  # Convert to integer as per your model
                     email=user.email
                 )
-                messages.success(request, "Account created successfully! Please login.")
+
+                # Send welcome email
+                send_html_email(
+                    subject='Welcome to Our Site',
+                    template_name='emails/welcome_email.html',
+                    context={
+                        'user_name': user.username,
+                        'site_name': 'Rannaghore Protidin',
+                    },
+                    recipient_list=[user.email]
+                )
+
+                messages.success(request, "Account created successfully! Please check your email and login.")
                 return redirect('sing_in')
+
             except Exception as e:
                 # If UserInfo creation fails, delete the user and show error
                 user.delete()
