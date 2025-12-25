@@ -21,7 +21,7 @@ def send_simple_email(subject, message, recipient_list):
 
 
 def send_html_email(subject, template_name, context, recipient_list):
-    """Send an HTML email using a template"""
+    """Send an HTML email using a templates"""
     try:
         html_content = render_to_string(template_name, context)
         text_content = strip_tags(html_content)

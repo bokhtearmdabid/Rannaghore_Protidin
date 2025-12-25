@@ -140,7 +140,7 @@ def buy_now(request, p_id):
         messages.error(request, 'Product not found.')
         return redirect('home')
 
-    # Pass data to the template
+    # Pass data to the templates
     context = {
         'user_name': request.user.username,
         'product': product,  # Pass the entire product object
