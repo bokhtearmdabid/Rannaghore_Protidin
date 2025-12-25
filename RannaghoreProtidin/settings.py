@@ -9,7 +9,22 @@ SECRET_KEY = config("SECRET_KEY")
 
 DEBUG = config("DEBUG", default=False, cast=bool)
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
+# Fixed ALLOWED_HOSTS
+ALLOWED_HOSTS = [
+    'rannaghore-protidin.onrender.com',
+    'localhost',
+    '127.0.0.1',
+    '.onrender.com',
+]
+
+# Add CSRF_TRUSTED_ORIGINS for Django 4.0+
+CSRF_TRUSTED_ORIGINS = [
+    'https://rannaghore-protidin.onrender.com',
+    'https://*.onrender.com',
+]
+
+# Security settings for production behind proxy
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 INSTALLED_APPS = [
