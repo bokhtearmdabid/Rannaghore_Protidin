@@ -1,5 +1,5 @@
 Django==5.2.5
-Pillow==10.0.1
+Pillow==11.0.0
 python-social-auth[django]==0.3.6
 social-auth-app-django==5.4.0
 gunicorn==21.2.0
